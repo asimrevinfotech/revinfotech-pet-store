@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build artifacts / submission package
+*.zip
+
+# wp-env runtime data
+.wp-env.override.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
