@@ -193,7 +193,7 @@ class RPS_Pet_Table_Widget extends Widget_Base {
 						<tr>
 							<td>
 								<?php if ( ! empty( $pet['image'] ) ) : ?>
-									<img src="<?php echo esc_url( $pet['image'] ); ?>" alt="<?php echo esc_attr( $pet['name'] ); ?>" loading="lazy" />
+									<img class="rps-pet-image" src="<?php echo esc_url( $pet['image'] ); ?>" alt="<?php echo esc_attr( $pet['name'] ); ?>" loading="lazy" />
 								<?php endif; ?>
 							</td>
 							<td><?php echo esc_html( $pet['name'] ); ?></td>

@@ -57,9 +57,27 @@
 		render();
 	}
 
+	function hideBrokenImages( wrap ) {
+		var images = wrap.querySelectorAll( '.rps-pet-image' );
+		images.forEach( function ( img ) {
+			function hide() {
+				img.style.display = 'none';
+			}
+
+			if ( img.complete && 0 === img.naturalWidth ) {
+				hide();
+			} else {
+				img.addEventListener( 'error', hide );
+			}
+		} );
+	}
+
 	function init() {
 		var wraps = document.querySelectorAll( '.rps-pet-table-wrap' );
-		wraps.forEach( paginate );
+		wraps.forEach( function ( wrap ) {
+			hideBrokenImages( wrap );
+			paginate( wrap );
+		} );
 	}
 
 	if ( document.readyState === 'loading' ) {
