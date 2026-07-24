@@ -23,6 +23,10 @@ low traffic, but at high concurrency multiple requests could race past an expire
 simultaneously and all fire live API calls before any of them repopulates the cache (a stampede).
 There's no locking around the fetch-and-set path. At scale this should move to a proper object cache
 with a lock (e.g. `wp_cache_add` as a mutex) or a cron-refreshed cache instead of on-demand refresh.
+Separately, "Rows Per Page" is presentation-only — the full result set (600+ rows for `available`
+on the shared public demo API) is always fetched, cached, and sent to the browser; a busier status
+filter means a proportionally larger HTML payload on every page view, regardless of the configured
+page size.
 
 **d. With more time**
 Add a scheduled cron job to refresh the cache proactively (removing the stampede risk entirely),
