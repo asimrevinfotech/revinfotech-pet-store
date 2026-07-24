@@ -174,13 +174,11 @@ class RPS_Pet_Table_Widget extends Widget_Base {
 		$border_color = $this->sanitize_color( isset( $settings['border_color'] ) ? $settings['border_color'] : '' );
 		?>
 		<div id="<?php echo esc_attr( $widget_id ); ?>" class="rps-pet-table-wrap" data-rows-per-page="<?php echo esc_attr( $rows_per_page ); ?>">
-			<?php if ( $header_bg || $header_text || $row_text || $border_color ) : ?>
-				<style>
-					#<?php echo esc_attr( $widget_id ); ?> table { <?php echo $border_color ? 'border-color:' . esc_attr( $border_color ) . ';' : ''; ?> }
-					#<?php echo esc_attr( $widget_id ); ?> th { <?php echo $header_bg ? 'background-color:' . esc_attr( $header_bg ) . ';' : ''; ?> <?php echo $header_text ? 'color:' . esc_attr( $header_text ) . ';' : ''; ?> <?php echo $border_color ? 'border-color:' . esc_attr( $border_color ) . ';' : ''; ?> }
-					#<?php echo esc_attr( $widget_id ); ?> td { <?php echo $row_text ? 'color:' . esc_attr( $row_text ) . ';' : ''; ?> <?php echo $border_color ? 'border-color:' . esc_attr( $border_color ) . ';' : ''; ?> }
-				</style>
-			<?php endif; ?>
+			<style>
+				#<?php echo esc_attr( $widget_id ); ?> table { <?php echo $border_color ? 'border-color:' . esc_attr( $border_color ) . ';' : ''; ?> }
+				#<?php echo esc_attr( $widget_id ); ?> th { <?php echo $header_bg ? 'background-color:' . esc_attr( $header_bg ) . ';' : ''; ?> <?php echo $header_text ? 'color:' . esc_attr( $header_text ) . ';' : ''; ?> <?php echo $border_color ? 'border-color:' . esc_attr( $border_color ) . ';' : ''; ?> }
+				#<?php echo esc_attr( $widget_id ); ?> td { <?php echo $row_text ? 'color:' . esc_attr( $row_text ) . ';' : ''; ?> <?php echo $border_color ? 'border-color:' . esc_attr( $border_color ) . ';' : ''; ?> }
+			</style>
 			<table class="rps-pet-table">
 				<thead>
 					<tr>

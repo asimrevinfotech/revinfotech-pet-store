@@ -126,7 +126,7 @@ class RPS_Settings {
 			? $status
 			: $defaults['default_status'];
 
-		$minutes = isset( $input['cache_minutes'] ) ? absint( $input['cache_minutes'] ) : 0;
+		$minutes = isset( $input['cache_minutes'] ) ? (int) $input['cache_minutes'] : 0;
 		$sanitized['cache_minutes'] = $minutes > 0 ? $minutes : $defaults['cache_minutes'];
 
 		return $sanitized;
