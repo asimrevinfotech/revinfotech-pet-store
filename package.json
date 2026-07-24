@@ -1,0 +1,15 @@
+{
+	"name": "revinfotech-pet-store-dev",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Local Docker-based WordPress dev environment for the Revinfotech Pet Store Elementor plugin.",
+	"scripts": {
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:destroy": "wp-env destroy",
+		"env:logs": "wp-env logs"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^11.11.0"
+	}
+}
